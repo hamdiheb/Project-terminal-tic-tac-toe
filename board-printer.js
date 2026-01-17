@@ -15,9 +15,33 @@
         =================
     Test your function by calling it with an example tic-tac-toe board.
 */
+        let board = [
+            ['X', '_', '_'],
+            ['_', 'X', '_'],
+            ['O', 'O', 'X']
+        ];
+
 export function printBoard(board) {
+    for(let i=0;i<board.length;i++){
+        let element = board[i];
+        let bo = '';
+        for(let j=0;j<element.length;j++){
+            if(element[j] === '_'){
+                bo+=' ' +' | '
+            }else{
+            bo+=element[j]+' | ';
+            }
+        }
+        console.log(bo);
+        let des='';
+        for(let g=0;g<bo.length;g++){
+            des+='=';
+        }
+        console.log(des);
+    }        
 }
 
+printBoard(board);
 /*
     Given a tic-tac-toe board (an array of arrays),
         - return true if there are no moves left to make (there are no more '_' values)
