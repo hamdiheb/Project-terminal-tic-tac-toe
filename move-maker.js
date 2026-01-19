@@ -9,17 +9,37 @@
         - you can output 'Try again...'
         - and then return false
     Testing your function by calling it with some values. An example board is:
-        let board = [
+*/
+let board = [
             ['X', '_', '_'],
             ['_', 'X', '_'],
             ['O', 'O', 'X']
         ];
-*/
-function validateMove(move, board) {
-    // Implement this at the end if you have time, otherwise you can help your teammates!
-    return true;
+
+
+const input = "1, 2";
+const move = (input) => {
+    return input.split(",").map(n => Number(n) - 1)
 }
 
+
+function validateMove(move, board) {
+    if (
+      move[0] < 0 ||
+      move[1] < 0 ||
+      move[0] > board.length ||
+      move[1] > board[0].length ||
+      board[move[0]][move[1]] != "_"
+    ) {
+      console.log("Try again...");
+      return false;
+    }
+    // Implement this at the end if you have time, otherwise you can help your teammates!
+    return true;
+
+}
+
+console.log(validateMove([1, 2],board));
 /*
     Given 3 parameters:
         - a board (an array of arrays)

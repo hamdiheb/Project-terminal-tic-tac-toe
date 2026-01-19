@@ -41,11 +41,22 @@ export function printBoard(board) {
     }        
 }
 
-printBoard(board);
-/*
+
+/*for(const element in board){
+        console.log(element.length)
+    }
     Given a tic-tac-toe board (an array of arrays),
         - return true if there are no moves left to make (there are no more '_' values)
         - return false if there are still moves that can be made
 */
 export function checkIfNoMovesLeft(board) {
+    let more = false;
+    for(let i=0;i<board.length;i++){
+        let element = board[i];
+        for(let j=0;j<element.length;j++){
+            
+        }
+    }
 }
+
+printBoard(board);
