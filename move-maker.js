@@ -51,6 +51,10 @@ console.log(validateMove([1, 2],board));
             - Update the board with the player's value ('X' or 'O') in the correct position
             - Return true
 */
-export function makeMove(board, move, player) {
-    return false;
-}
+export default function makeMove(board, move, player) {
+    if (!validateMove(move, board)) {
+        return false;
+    }
+    board[move[0]][move[1]] = player;
+    return true;
+    }
