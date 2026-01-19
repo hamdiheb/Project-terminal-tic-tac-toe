@@ -52,11 +52,13 @@ export function printBoard(board) {
 export function checkIfNoMovesLeft(board) {
     let more = false;
     for(let i=0;i<board.length;i++){
-        let element = board[i];
-        for(let j=0;j<element.length;j++){
-            
-        }
+        // if(board[i].includes('_')){
+        //     return true;
+        // }else{
+        //     return false;
+        // }
+        return board[i].includes("_") ? true : false;
     }
 }
 
-printBoard(board);
+console.log(checkIfNoMovesLeft(board));
