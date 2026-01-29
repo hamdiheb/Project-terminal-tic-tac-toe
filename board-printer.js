@@ -16,8 +16,8 @@
     Test your function by calling it with an example tic-tac-toe board.
 */
         let board = [
-            ['X', '_', '_'],
-            ['_', 'X', '_'],
+            ['X', '_', 'X'],
+            ['X', 'X', '_'],
             ['O', 'O', 'X']
         ];
 
@@ -52,11 +52,6 @@ export function printBoard(board) {
 export function checkIfNoMovesLeft(board) {
     let more = false;
     for(let i=0;i<board.length;i++){
-        // if(board[i].includes('_')){
-        //     return true;
-        // }else{
-        //     return false;
-        // }
         return board[i].includes("_") ? true : false;
     }
 }

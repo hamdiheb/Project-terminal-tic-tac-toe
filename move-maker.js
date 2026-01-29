@@ -17,12 +17,22 @@ let board = [
         ];
 
 
-const input = "1, 2";
-const move = (input) => {
-    return input.split(",").map(n => Number(n) - 1)
+
+import {checkIfNoMovesLeft} from './board-printer.js';
+import prompt from 'prompt';
+
+if (checkIfNoMovesLeft){
+ // Start the prompt
+ prompt.start();
+    // Get two properties from the user: username and email
+ prompt.get(['imput'], function (err, result) {
+    // Log the results.
+     const move = result.imput.split(',').map(element => Number(element) - 1);
+     console.log(move);
+ });
+}else {
+    console.log("Game Over");
 }
-
-
 function validateMove(move, board) {
     if (
       move[0] < 0 ||
@@ -36,10 +46,8 @@ function validateMove(move, board) {
     }
     // Implement this at the end if you have time, otherwise you can help your teammates!
     return true;
-
 }
 
-console.log(validateMove([1, 2],board));
 /*
     Given 3 parameters:
         - a board (an array of arrays)
